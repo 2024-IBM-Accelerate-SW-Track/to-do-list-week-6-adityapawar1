@@ -8,10 +8,10 @@ export default function Todo({ todo }) {
 
   return (
     <Grid key={todo.ID}>
-      <Card data-testid={todo.Task} style={{ marginTop: 10, background: color }}>
+      <Card data-testid={todo.Task ?? todo.task} style={{ marginTop: 10, background: color }}>
         <ListItemButton component="a" href="#simple-list">
           <Checkbox style={{ paddingLeft: 0 }} color="primary" />
-          <ListItemText primary={todo.Task} secondary={todo.Current_date} />
+          <ListItemText primary={todo.Task ?? todo.task} secondary={todo.Current_date ?? todo.dueDate} />
         </ListItemButton>
       </Card>
     </Grid>
